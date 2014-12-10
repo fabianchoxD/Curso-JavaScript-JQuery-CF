@@ -5,6 +5,40 @@
 	<title>Eventos En Javascript</title>
 </head>
 <body>
-	<script type="text/javascript"></script>
+	<!-- Se crea el Boton para hacer click, el cual contiene un id llamado miboton.-->
+	<button id="miboton">Haz Click sobre Mi</button>
+	<script type="text/javascript">
+
+	//Cuando la pagina carga, genera un alert donde muestra que efectivamente la pagina ha cargado totalmente
+	window.addEventListener("load",function(){
+		alert("La pagina se ha Cargado");
+	});
+
+	//Crea una variable boton, la cual captura un id "miboton", el cual está como id en el boton y luego le pasa un evento listener
+	// el cual requiere el parametro click, e invoca la función boton_click.
+	var boton = document.getElementById("miboton");
+	window.addEventListener("keydown",tecla_presionada)
+	boton.addEventListener("click",boton_click);
+
+	// Crea la funcion boton_click
+	function boton_click(evento)
+	{
+		alert("Bienvido a fabianchoxD Page");
+		//Elimina el  Listener (en este caso Alert) del Boton
+		//boton.removeEventListener("click",boton_click);
+
+		//Captura el tipo de evento que ocurrió
+		//alert(evento.type);
+
+		//captura la posición en X
+		alert(evento.screenX);
+	}
+
+	function tecla_presionada(evento)
+	{
+		//Captura en codico ASCII la tecla que ha presionado y la muestra en un Alert.
+		alert(evento.keyCode);
+	}
+	</script>
 </body>
 </html>
