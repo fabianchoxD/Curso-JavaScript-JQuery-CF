@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arreglos en Javascript</title>
+
+	<script type="text/javascript">
+
+	/* ====================================================================================== */
+
+	/* Crea variable arreglo, ingresa datos al arreglo mediante arreglo.push
+	se puede visualizar esto mediante consola = console.log();
+
+	var arreglo = new Array();
+
+	arreglo.push(3);
+	arreglo.push('Hola Mundo');
+	arreglo[0] = 'Fabian S. Varon';
+
+	console.log(arreglo[0]);
+	*/
+
+	/* ====================================================================================== */
+
+	/* Crea una variable arreglo con 3 elementos, imprime en consola la longitud del Array
+
+	var arreglo = [1,'Hola','Mundo'];
+
+	for (var i = 0; i < arreglo.length; i++) {
+		
+	console.log(arreglo[i]);
+	};
+
+	*/
+	
+	/* ====================================================================================== */
+
+	/*	Crea variable arreglo con Arreglo multidimensional, separado por coma ',' [arreglo1],[arreglo2]
+		Luego imprime los valores del arreglo 2 que está en la posición 1
+
+	var arreglo = [[1,2,3],['a','b','c']];
+
+	for (var i = 0; i < arreglo[1].length; i++) {
+		
+	console.log(arreglo[1][i]);
+	};
+
+	*/
+
+	/* ====================================================================================== */
+
+	/*	Crea variable arreglo con Arreglo multidimensional, separado por coma ',' [arreglo1],[arreglo2]
+		Luego imprime los valores del arreglo 1 que está en la posición 0
+
+	var arreglo = [[1,2,3],['a','b','c']];
+
+	for (var i = 0; i < arreglo[0].length; i++) {
+		
+	console.log(arreglo[0][i]);
+	};
+
+	*/
+
+	/* ====================================================================================== */
+
+	/* Crea variable arreglo con Arreglo multidimensional, separado por coma ',' [arreglo1],[arreglo2]
+	   Luego Crea una variable cadena, selecciona el arreglo 2, que está en la posición 1 y con .join
+	   lo convierte en String (cadena)
+	   Luego lo imprime en consola.
+
+	var arreglo = [[1,2,3],['a','b','c']];
+
+	var cadena = arreglo[1].join('');
+
+	console.log(cadena);
+
+	*/
+
+	/* ====================================================================================== */
+
+	/* Crea variable cadena con un String abc
+	   Luego Crea una variable arreglo, le asigna el valor de cadena y con .split lo convierte
+	   en Array (arreglo)	  
+	   Luego lo imprime en consola.
+
+	var cadena = 'abc';
+	var arreglo = cadena.split('');
+
+	console.log(arreglo[1]);
+	console.log(arreglo);
+
+	*/
+
+	/* ====================================================================================== */
+
+	/* Crea variable cadena con un String abc
+	   Luego Crea una variable arreglo, le asigna el valor de cadena y con .split lo convierte
+	   en Array (arreglo)
+
+	   OJO
+
+	   dentro de split al copiar '-' el va a separar lo que esté en String y convertirlo en Array 
+	   cada vez que encuentre un guion medio (-).
+	     
+	   Luego lo imprime en consola. 
+	*/
+	var cadena = 'a-bc';
+	var arreglo = cadena.split('-');
+
+	console.log(arreglo[1]);
+	console.log(arreglo);
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>
