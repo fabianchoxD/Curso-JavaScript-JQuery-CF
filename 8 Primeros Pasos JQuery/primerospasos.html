@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Primeros pasos en JQuery</title>
+	<meta charset="UTF-8">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js" ></script>
+
+	<script>
+
+	/* Forma antigua de verificar que la pagina había cargado
+
+		$(document).ready(function (){
+		})
+	*/
+
+    /* Forma avanzada para verificar si la página ha cargado
+	$(function (){
+	});
+	*/
+
+
+	/* Forma reciente pero no la mejor de verificar si la página ha cargado*/
+
+		$(document).on('ready',function(){
+
+	// Imprime Literlamente Texto
+			$('#prueba').text('<p> Hola Mundo </p>');
+
+	// Imprime Texto con funciones de HTML
+			$('.prueba').html('<strong> Estoy usando jquery </strong>');
+
+		})
+	
+	</script>
+</head>
+<body>
+
+<div id="prueba"></div>
+
+<div class="prueba"></div>
+	
+</body>
+</html>
