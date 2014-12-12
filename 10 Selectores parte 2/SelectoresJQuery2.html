@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selectores parte 2</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script>
+
+	//Declaro la variable como global
+	var seleccion;
+
+	$(document).on('ready',function (){
+
+		//la selección toma como parametro los elementos de la clase ejem1.
+		seleccion = $('.ejem1');
+
+		//valida la selección si hay caracteres
+		if(seleccion.length)
+			// indica que hay y los imprime
+			console.log('Existen: ' + seleccion.length);
+		else		
+			// si cambia el valor de ejem1 a cualquier otro.. dirá que no hay elementos seleccionados.
+			console.log('No existe el elemento Seleccionado');
+	
+	/*==============================================================================*/
+	
+		/* Selecciona los que NO tienen ese tag o indicador
+
+		seleccion.not('cl1').text('Este elemento no tiene la clase cl1');
+
+		*/
+
+	/*==============================================================================*/
+		/* Selecciona los que TIENEN tienen ese tag o indicado*/
+
+		seleccion.has('p').text('Este elemento tiene un <p> en su contenido');
+
+
+	/*==============================================================================*/
+		/* Selecciona el PRIMER elemento asociado al tag.. en este caso li*/
+
+		$('li').first().html('<strong> Soy el Elemento 1 </strong>');
+
+	/*==============================================================================*/
+		/* Selecciona la posición correspondiente a eq que esté asociada al tag.. en este caso 2
+		   Ojo... las listas se comportan como array, asi que la posición 2 es el elemento 3.
+		*/
+
+		$('li').eq(2).text('Soy el Elemento Número 3');
+	});
+
+	</script>
+</head>
+
+<body>
+	<div class="cl1">		
+		<p></p>			
+	</div>
+
+	<div class="ejem1">		
+		<p></p>			
+	</div>
+
+	<div class="ejem1">
+		<span></span>
+	</div>
+
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+</body>
+</html>
