@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objetos en Javascript</title>
+
+	<script type="text/javascript">
+
+	// Instancia un objeto Gato de la Clase gato
+
+		var Gato = new gato("Misifus");
+		var Gato2 = new gato ("minino");
+
+	// Clase gato, el cual recibe el parametro nombre
+
+		function gato (nombre)
+		{
+	// atributos de la clase gato, incluye una función anónima.
+			this.nombre = nombre;
+			this.maulla = function(){
+				alert(this.nombre + " Meoww");
+			};
+		}
+
+	// Muestra en alert el nombre de los 2 gtos, e invoca la función anónima.
+
+		alert("El gato se llama: " + Gato.nombre);
+		alert("El segundo Gato se llama: " + Gato2.nombre);
+		Gato.maulla();
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
