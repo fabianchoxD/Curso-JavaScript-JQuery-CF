@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Método CSS</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+		
+		$('body,html').css('background', '#FFF');
+
+		var cssH1 = {
+			'text-align':'center',
+			'color':'red',
+			'font-family':'Cursive'
+		}
+
+		$('h1').css(cssH1);
+
+		var bgItem2 = $('#item2').css('background-color');
+		var colorItem2 = $('#item2').css('color');
+
+		if(bgItem2 === colorItem2)
+			$('#item2').css('color','#FFF');
+
+		});
+	</script>
+
+	<style>
+
+	body,html
+	{
+		background: #CCC;
+		color: red;
+		font-family: Arial;
+		margin: 0;
+		padding: 0;
+	}
+
+	#item1
+	{
+		background: #F6F6F6 ;
+		height: 50px;
+		width: 300px;
+		margin: 5% auto ;
+	}
+
+
+	#item2
+	{
+		display: block;
+		background: #000 ;
+		height: 50px;
+		width: 300px;
+		margin: 5% auto ;
+	}
+	</style>
+</head>
+<body>
+	<h1>Método css () de JQuery</h1>
+	<div id="item1">Item 1</div>
+	<div id="item2">ITem 2</div>
+
+
+</body>
+</html>
