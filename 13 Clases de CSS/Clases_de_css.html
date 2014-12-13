@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clases de CSS</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+		$(document).on('click', function() {
+
+			// añade la clase que se envía por parametro
+			//$("#test").addClass('test');
+	//==============================================================
+
+			// Elimina la clase que se envía por parametro
+			//$("#test").removeClass('test');
+	//==============================================================
+			// si no la tiene la clase, la añade, y si la tiene la Elimina
+			$("#test").toggleClass('test');
+
+			// Realizo validaciones y modificio según cambia toggleClass
+
+			if($('#test').hasClass('test'))
+			{
+				$('#test').text("Hey soy Rojo");
+			}else
+			{
+				$('#test').text("oww No soy Rojo :( ");
+			}
+		});
+		
+		});
+	</script>
+
+	<style>
+		.test
+		{
+			background-color: red;
+		}
+	
+	</style>
+</head>
+<body>
+	
+	<div id="test" >Click me</div>
+	
+</body>
+</html>
