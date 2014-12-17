@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Método Attr</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+		/*		
+		$('#prueba').attr('class', 'cambieLaClase');
+		var clase = $('#prueba').attr('class');
+		alert(clase);*/
+
+
+		/*
+		$('#prueba').removeAttr('class');
+		var clase = $('#prueba').attr('class');
+		alert(clase);
+		*/
+
+		/*
+		$('#prueba').attr('class',function(){
+			var cadena = "Hola_Mundo";
+			return cadena;
+		});
+		var clase = $('#prueba').attr('class');
+		alert(clase);
+		*/
+
+		$('a').on('click', function(e) {
+			e.preventDefault();
+			var link = $(this).attr('href');
+			alert("Usted Será redireccionado hacia mi Github");
+			//location.href = link;
+
+			$(location).attr('href', 'https://github.com/fabianchoxD');
+			});
+		});
+	</script>
+
+	<style>
+		
+	
+	</style>
+</head>
+<body>
+<header>
+	
+	<div id="prueba" class="pruebaClass">
+		
+	</div>
+
+	<a href"http://www.google.com.co">FabianchoxD Github</a>
+
+</header>
+</body>
+</html>
