@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Recorrer el DOM</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+		// metodo .next ... selecciona el siguiente elemento, se puede especificar o mandar así no mas.
+
+		console.log($('#primero').next().text());
+
+		// metodo .parent  selecciona el texto del articulo, basado en el selector del padré 
+
+		console.log($('#test').parent().text());
+
+		// obtenemos el id del padre para verificar que efectivamente dirá padre
+
+		console.log($('#test').parent().attr('id'));
+
+		// metodo .children para obtener el hijo. y de una vez el id para verifcar que es correcto.
+
+		console.log($('#padre').children().text());
+		console.log($('#padre').children().attr('id'));
+
+
+		// metodo .siblings para obtener a los que comparten al mismo padre, (hermanos)
+
+		console.log($('#primero').siblings());
+
+
+		// metodo .each recorre cada elemento de la selección
+
+
+		$('ul li').each(function(index, elemento) {
+
+				console.log("El  elemento #" + index + " contiene este Texto: " + $(elemento).text());
+			
+		});
+
+
+
+		});
+	</script>
+
+	<style>		
+		
+	</style>
+</head>
+<body>
+	
+	<div>
+		<article id="padre">Hey !! :D
+			<div id="test">Soy el Hijo</div>
+		</article>
+	</div>
+	<ul>
+		<li id="primero">Soy el Primero</li>
+		<li>Soy el que sigue</li>
+		<li></li>
+	</ul>
+	
+</body>
+</html>
