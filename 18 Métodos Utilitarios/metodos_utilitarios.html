@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Métodos Utilitarios</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+
+		$('button').on('click', function() {
+
+			// .each recorre cada elemento de la funcion y tiene como parametro el indice y el valor
+
+/*
+			var arreglo = ['FabianchoxD','Tutorial jquery','Fabian Varon'];
+
+			$.each(arreglo, function(index, val) {
+				 /* iterate through array or object 
+
+				 if(arreglo[index] == 'Fabian Varon')
+
+				 		return true;
+
+				 console.log('Elemento ' + index + ' Vale: ' + val)
+			});
+*/
+/*
+			if($.inArray('FabianchoxD', arreglo) !== -1)
+				console.log(arreglo[$.inArray('FabianchoxD',arreglo)]);
+			
+*/
+
+			var s = '                            HOLA			MUND			DO'                      ;
+
+			console.log(s);
+			console.log($.trim(s));
+		});
+	});
+	</script>
+
+	<style>		
+
+	body,html{
+		background: #000;
+		color: #000;
+		font-weight: bold;
+		margin: 0;
+		padding: 0;
+	}
+
+	header{
+		display: block;
+		margin: 0 auto 50px auto;
+		text-align: center;
+	}
+
+	img{
+
+			width: 50%;
+		}
+
+	button{
+		display: block;
+		margin: 0 auto;
+		width: 80px;
+	}
+
+	div{
+		
+		background: #FFF;
+		height: 50px;
+		display: block;
+		width: 400px;
+		margin: 2px auto;
+	}
+
+	</style>
+</head>
+<body>
+	<header><img src="img/gh.png" alt="img"></header>
+	<button id="test">Ejecutar</button>
+	
+	<div id="e1">Métodos Utilitarios</div>	
+</body>
+</html>
