@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Crear copiar y remover Elementos</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+
+		$('button').on('click', function() {
+
+//=============================================================
+
+/*			AppendTo desplaza lo ques está dentro de $() a la indicación que tenga en este caso mueve el elemento de la lista hasta abajo
+			append puede añadir texto o hacer lo mismo que appendTo solo que usandjo JQuery
+*/
+		
+			//$('ol li:first').appendTo('ol:first');
+
+			//$('ol:first').append($('ol li:first'));
+
+//=============================================================
+
+/*	
+		PrependTo desplaza lo ques está dentro de $() a la indicación que tenga; en este caso mueve el elemento de la lista hasta arriba
+		prepend puede añadir texto o hacer lo mismo que prependTo solo que usandjo JQuery
+
+*/			
+
+			//$('ol li:last').prependTo('ol:first');
+
+			//$('ol:first').prepend($('ol li:last'));
+
+//=============================================================
+
+/*	
+		InsertAfter inserta el elemento despues del selector indicado
+		after puede añadir texto o hacer lo mismo que InsertAfter solo que usandjo JQuery
+
+*/			
+
+			/*
+			$('ol li:first').insertAfter('#e1');
+
+			$('#e1').after($('ol li:first'));
+			*/
+
+//=============================================================
+
+/*	
+		InsertBefore inserta el elemento Antes del selector indicado
+		before puede añadir texto o hacer lo mismo que InsertBefore solo que usandjo JQuery
+
+*/		
+
+			/*
+			$('ol li:first').insertBefore('#e1');
+			$('#e1').before($('ol li:first'));
+			*/
+
+//=============================================================
+
+/*	
+		.clone clona el elemento sin eliminar el original
+*/		
+
+			/*
+			var clon= $('ol li:first').clone();
+			$('#e1').before(clon);
+			*/
+
+			/*
+			var nuevo_elemento = $('<p> Hola Mundo </p>');
+			$('#e1').append(nuevo_elemento);
+			*/
+
+
+//==============================================================
+		
+		// elimina el elemento que esté seleccionado dentro de $('');.
+
+			$('ol li:last').remove();
+		});
+
+		});
+	</script>
+
+	<style>
+		
+		body,html
+		{
+			background: #000;
+			color: #FFF;
+			margin: 0;
+			padding: 0;
+		}
+
+
+		header{
+			display: block;
+			margin: 0 auto 50px auto;
+			width: 365px;
+			text-align: center;
+		}
+		
+		img{
+			width: 50%;
+			padding-top: 10%;
+		}
+
+		ol{
+			display: block;
+			width: 500px;
+			margin: 0 auto;			
+		}
+
+		ol li {
+			background: #088A29;
+			margin: 5px auto;
+			height: 30px;
+			width: 100%;
+		}
+
+		button{
+			display: block;
+			margin: 0 auto;
+			width: 80px;
+		}
+
+		div{
+			background: #FE2E64;
+			height: 50px;
+			display: block;
+			width: 400px;
+			margin: 2px auto;
+		}
+
+	</style>
+</head>
+<body>
+
+<header>
+	<img src="img/gh.png" alt="img">
+</header>
+
+	<ol>
+		<li>Elemento 1</li>
+		<li>Elemento 2</li>
+		<li>Elemento 3</li>
+		<li>Elemento 4</li>
+	</ol>
+
+	<button id="test">ejecutar</button>
+
+	<div id="e1">
+		<p>Div 1</p>
+	</div>
+
+	<div id="e2">
+		<p>Div 2</p>
+	</div>
+	
+</body>
+</html>
