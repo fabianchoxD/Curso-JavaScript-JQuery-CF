@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Método Data</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+
+		//$.data(elemento, 'nombreAtributo', valor); 
+		// escribe el valor del atributo
+		$('ul li').each(function(index,elemento){
+			$.data(elemento,'posición',index);
+		});
+
+		// obtiene el valor del atributo
+
+		$('ul li').each(function(index,elemento){
+			console.log($.data(elemento,'posición'));
+		});
+	});
+	</script>
+</head>
+<body>
+	<ul>
+		<li>Uno</li>
+		<li>Dos</li>
+		<li>Tres</li>
+	</ul>
+</body>
+</html>
