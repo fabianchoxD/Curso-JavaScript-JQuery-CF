@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Efectos</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+
+		var elem= $('#caja1');
+
+		$('#btn1').click(function() {
+			/* Mostrar Elemento */
+
+			//elem.show();
+			//elem.slideDown();
+			elem.fadeIn(5000);
+		});
+
+		$('#btn2').click(function() {
+			/* Ocultar Elemento */
+			//elem.hide();
+			//elem.slideUp();
+			//elem.fadeOut();
+			//elem.slideToggle();
+			elem.fadeOut(1000);
+
+
+			});	
+
+
+		
+	});
+
+	</script>
+
+	<style>
+		#caja1
+		{
+			background: rgba(56,56,56,0.8);
+			display: block;
+			height: 80px;
+			width: 400px;
+			margin: 5% auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="caja1"></div>
+
+	<button id="btn1">Mostrar</button>
+	<button id="btn2">Ocultar</button>
+</body>
+</html>
