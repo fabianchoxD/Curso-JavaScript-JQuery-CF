@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vincular y Desvincular Eventos</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	var cajabg, v=0;
+
+	$(document).on('ready',function (){
+
+		/*
+
+		$('#caja1').mouseover(function() {
+
+			cajabg = $(this).css('background');
+			$(this).css('background','red')
+
+		});
+	
+	$('#caja1').mouseout(function() {
+		$(this).css('background',cajabg)
+	});
+*/
+
+//================================================================
+
+/*
+	$('#caja1').on('mouseover', function() {
+
+		cajabg = $(this).css('background');
+			$(this).css('background','red')
+		});
+
+		$('#caja1').on('mouseout', function() {
+			$(this).css('background',cajabg)
+		});
+*/
+
+//================================================================
+
+/*
+
+	var f1= function(){console.log('Pasaste el Cursor sobre el Div')};
+	var f2= function() {
+				v++
+				cajabg = $(this).css('background');
+				$(this).css('background','red')
+			};
+
+	$('#caja1').on({
+
+			'mouseover': f2,
+
+			'mouseout':function() {
+				$(this).css('background',cajabg)
+
+				if(v>=3)
+					$('#caja1').off('mouseover',f2)
+							}
+ 	
+
+	})
+
+	$('#caja1').on('mouseover',f1)
+
+*/
+
+//================================================================
+	
+		$('#caja1').one('mouseover', function() {
+
+			cajabg = $(this).css('background');
+			$(this).css('background','red')
+		});
+
+
+			$('#caja1').on('mouseout', function() {
+			$(this).css('background',cajabg)
+		});
+
+	});
+
+	</script>
+
+	<style>
+
+	div{
+		background-color: #ccc;
+		width: 300px;
+		height: 450px;
+
+	}
+
+	</style>
+</head>
+<body>
+		<div id="caja1"></div>
+</body>
+</html>
