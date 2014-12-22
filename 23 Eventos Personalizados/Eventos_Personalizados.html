@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Introducción a Eventos</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+
+		/*
+
+		$('#myInput').on('cambio',function(){
+
+			if(this.checked)
+			{
+				$('#myInput').removeAttr('checked');
+				$('.cambiar').text('Encender');
+			}
+			else
+			{
+				$('#myInput').attr('checked', 'checked');
+				$('.cambiar').text('Apagado');
+
+			}
+		});
+
+		$('.cambiar').on('click', function() {
+			$('#myInput').trigger('cambio');
+		});
+	
+		*/
+
+		$('#myInput').on('cambio',function(ev,id){
+
+			console.log(id);
+
+			if(this.checked)
+			{
+				$('#myInput').removeAttr('checked');
+				$('.cambiar').text('Encender');
+			}
+			else
+			{
+				$('#myInput').attr('checked', 'checked');
+				$('.cambiar').text('Apagado');
+
+			}
+		});
+
+		$('.cambiar').on('click', function() {
+			$('#myInput').trigger('cambio',[$(this).attr('id')]);
+		});
+
+	});
+
+	</script>
+</head>
+<body>
+		<input type='checkbox' id="myInput" checked="checked">
+		<button class="cambiar" id="boton 1" >Apagar</button>
+		<button class="cambiar" id="boton 2" >Apagar</button>
+</body>
+</html>
