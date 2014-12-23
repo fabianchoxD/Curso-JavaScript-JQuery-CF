@@ -1,0 +1,10 @@
+Apuntes sobre conceptos Básicos de AJAX
+
+XMLHttpRequest - AJAX
+
+Petición Servidor - Asincrónica
+
+var respuesta;
+$.get('pagina.php',function(resp) { respuesta = resp; });
+console.log(respuesta);  // marcará indefinido pq cuando arranca... respuesta no tiene valor.
+
