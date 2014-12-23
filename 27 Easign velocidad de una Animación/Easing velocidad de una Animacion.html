@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Easing Velocidad de una Animación</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+
+		$('#boton').on('click', function() {
+			// el easing por defecto es linear
+
+			//$('#ejemplo').slideUp('slow','linear')
+
+			//$('#ejemplo').slideUp('slow','swing')
+
+			$('#ejemplo').slideUp('slow','easeOutBounce');
+			$(this).animate({
+
+				height:['+=100','easeOutBounce'],
+				width:['+=50','linear']
+
+			});
+		});
+	});
+
+	</script>
+
+	<style>
+		#ejemplo
+		{
+			height: 200px;
+			width: 400px;
+			background-color: rgb(250,100,100);
+		}
+	</style>
+</head>
+<body>
+		<div id="ejemplo"></div>
+		<button id="boton">Mover</button>
+</body>
+</html>
