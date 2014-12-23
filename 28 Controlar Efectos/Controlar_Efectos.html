@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Controlar Efectos</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.animate-colors-min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+
+// deshabilita todas las animaciones, pero el efecto final se mantiene.
+//$.fx.off = true   
+
+		$('#caja1').animate({
+		marginBottom:0
+		},1000,function(){
+
+			$('#caja1').animate({
+				backgroundColor: 'green',
+				marginTop:-100,
+				opacity:0.5
+			})
+		}).delay(2000).slideUp();
+
+	$('#caja1').slideUp().delay(2000).slideDown();
+
+	});
+
+	</script>
+
+	<style>
+		body,html{
+			padding: 100px;
+		}
+
+		div{
+			display: block;
+			height: 80px;
+			width: 400px;
+			margin: 0 auto;
+		}
+
+		#caja1{background:rgba(56,56,56,0.8);margin-bottom: 100px;}
+		#caja2{background:rgba(89,69,36,0.8);}
+	</style>
+</head>
+<body>
+		<div id="caja1"></div>
+		<div id="caja2"></div>
+</body>
+</html>
