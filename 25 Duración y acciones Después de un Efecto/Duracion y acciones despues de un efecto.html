@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Duración y Acciones después de un Efecto</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+
+		$.fx.speeds.leeento=3000;
+		$.fx.speeds.muyRapido=100;
+
+		$('#boton').on('click',function() {
+			
+			$('#ejemplo').fadeOut('leeento',function(){
+
+				//$('body').append('El Elemento se ha Borrado');
+				$(this).fadeIn('muyRapido');
+			});
+		});
+
+	});
+
+	</script>
+
+	<style>
+		#ejemplo
+		{
+			height: 200px;
+			width: 400px;
+			background-color: rgb(250,100,100);
+		}
+	</style>
+</head>
+<body>
+		<div id="ejemplo"></div>
+		<button id="boton">Fade Out</button>
+</body>
+</html>
