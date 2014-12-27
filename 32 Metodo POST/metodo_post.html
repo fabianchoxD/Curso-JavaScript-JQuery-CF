@@ -17,49 +17,44 @@
 		//var nom,m,msj;
 
 		$('#main form').on('submit', function(e) {
-
 			e.preventDefault();
 
-			$.ajax({
+		var info = $('#main form').serialize();
 
-			beforeSend: function() {
-				$('#status').spin({radius:3, width:2, height:2, length:4});
-				
-			},
-			url: pet,
-			type:met,
-			data: $('#main form').serialize(),
+		//==================================================================
+
+		/*
+			$.post(pet,info, function(resp,estado,jqXHR) {
 			
-			success: function(resp) {
-				
-				if(resp == "correcto")
-				{
-				$('#status').html('<img src="img/ok.png"/>');		
-				}
-
-				else
-				{
-				$('#status').html('<img src="img/x.png"/>');
-				console.log(resp)					
-				}
-		
-			},
-
-			error: function (jqXHR,estado,error){
-				$('#status').html('<img src="img/x.png"/>');
+				console.log(resp)
 				console.log(estado)
-				console.log(error)
-			},
-
-			complete: function (jqXHR,estado){
-				console.log(estado)		
-			},
-			timeout:7000
-
+				console.log(jqXHR)
 			});
+		*/
 
+		//==================================================================
+		/*
+		pet='url.php'
+
+		$.post(pet,info).error(
+			function(){
+				console.log('Error')
+			}).success(function(resp,estado,jqXHR) {
+			
+				console.log(resp)
+				console.log(estado)
+				console.log(jqXHR)
+			});
+		*/
+
+		//==================================================================
+
+		pet='url.php'
+
+		$.post('metodo_post.html',function(resp){
+				console.log(resp)
+			});
 		});
-
 	});
 
 	</script>
