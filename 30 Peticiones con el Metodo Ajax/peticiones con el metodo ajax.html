@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Introducción a Eventos</title>
+	<title>Peticiones con el Método ajax</title>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="./js/spin.min.js"></script>
 	<script src="./js/jquery.spin.js"></script>
@@ -13,9 +13,10 @@
 
 		var pet = $('#main form').attr('action');
 		var met = $('#main form').attr('method');
+		
 		//var nom,m,msj;
 
-		$('#main form').on('submit',function(e){
+		$('#main form').on('submit', function(e) {
 
 			e.preventDefault();
 
@@ -23,20 +24,21 @@
 
 			beforeSend: function() {
 				$('#status').spin({radius:3, width:2, height:2, length:4});
-				/*
-				nom = 	document.fo.nombre.value;
-				m 	=	document.fo.mail.value
-				msj =	document.fo.mensaje.value;
-				*/
+				
 			},
 			url: pet,
 			type:met,
 			data: $('#main form').serialize(),
-			//data: {nombre:nom,mail:m,mensaje:msj},
-
-			succes: function(resp) {
-				$('#status').html('<img src="img/ok.png"/>');
+			
+			success: function(resp) {
+				if(resp == "correcto"){
+				$("#status").html('<img src="img/ok.png"/>');
 				console.log(resp)
+			}			
+			else{
+				$("#status").html('<img src="img/x.png"/>');
+				console.log(resp)
+			}
 			},
 
 			error: function (jqXHR,estado,error){
@@ -48,7 +50,7 @@
 			complete: function (jqXHR,estado){
 				console.log(estado)		
 			},
-			timeout:10000
+			timeout:7000
 
 			});
 

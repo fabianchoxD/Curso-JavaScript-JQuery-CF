@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Método Get</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+
+		// solo se usa el metodo get cuando queremos OBTENER archivos !!
+		$.get('hola.php',{nombre: "FabianchoxD"}, function(data) {
+			/*optional stuff to do after success */
+			$('#receptor').html(data);
+		});
+	});
+
+	</script>
+</head>
+<body>
+		<div id="receptor"></div>
+</body>
+</html>
