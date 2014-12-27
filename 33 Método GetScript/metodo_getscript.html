@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Método GetScript</title>
+	<style>
+		#ejemplo
+		{
+			height: 200px;
+			width: 400px;
+			background-color: rgb(250,100,100);
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script>
+
+		$(document).on('ready',function (){
+
+			$.getScript('http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js',function(){
+
+				console.log("Terminó");
+				$('#ejemplo').slideUp(3000,'easeOutBounce');
+			});
+
+		});
+	</script>
+
+</head>
+<body>
+
+	<div id="ejemplo"></div>
+	
+</body>
+</html>
