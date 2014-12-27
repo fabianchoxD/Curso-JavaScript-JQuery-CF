@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Introducción a Eventos</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="./js/spin.min.js"></script>
+	<script src="./js/jquery.spin.js"></script>
+
+	<script>
+
+	$(document).on('ready',function (){
+
+		var pet = $('#main form').attr('action');
+		var met = $('#main form').attr('method');
+		//var nom,m,msj;
+
+		$('#main form').on('submit',function(e){
+
+			e.preventDefault();
+
+			$.ajax({
+
+			beforeSend: function() {
+				$('#status').spin({radius:3, width:2, height:2, length:4});
+				/*
+				nom = 	document.fo.nombre.value;
+				m 	=	document.fo.mail.value
+				msj =	document.fo.mensaje.value;
+				*/
+			},
+			url: pet,
+			type:met,
+			data: $('#main form').serialize(),
+			//data: {nombre:nom,mail:m,mensaje:msj},
+
+			succes: function(resp) {
+				$('#status').html('<img src="img/ok.png"/>');
+				console.log(resp)
+			},
+
+			error: function (jqXHR,estado,error){
+				$('#status').html('<img src="img/x.png"/>');
+				console.log(estado)
+				console.log(error)
+			},
+
+			complete: function (jqXHR,estado){
+				console.log(estado)		
+			},
+			timeout:10000
+
+			});
+
+		});
+
+	});
+
+	</script>
+
+	<style>
+		
+		*{margin: 0; padding: 0;}
+
+		body,html{
+			font-family: Myriad Pro,Arial;
+			background: #111a29;
+			color: #fff;
+		}
+
+		#main{
+			display: block;
+			margin: 0 auto;
+			width: 400px;
+		}
+
+		#main h1{
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
+
+		::selection{
+			background: #e04c22;
+			color: #fff;
+		}
+
+		form{
+			display: block;
+			width: 100%;
+		}
+
+		input,textarea{
+			font-family: Myriad Pro,Arial;
+			color: #fff;
+			border: 0;
+			outline: 0;
+			background: #1f61ad;
+			border-radius: 1px;
+			font-size: 20px;
+			margin: 10px auto;
+			width: 95%;
+			display: block;
+			max-height: 100px;
+		}
+
+		textarea{
+			max-width: 95%;
+			height: 100px;
+		}
+		
+		input[type=submit]
+		{
+			display: inline-block;
+			vertical-align: middle;
+			height: 25px;			
+			cursor: pointer;
+		}
+
+		#status{
+			display: inline-block;
+			vertical-align: middle;
+			width: 20px;
+			height: 20px;
+		}
+
+		#status img{
+			width: 20px;
+			height: 20px;
+		}
+	</style>
+
+</head>
+<body>
+		<div id="main">
+			<h1>Formulario de Contacto</h1>
+			<form action="peticion.php" name="fo" method="POST">
+				<input type="text" name="nombre" placeholder="Nombre..." />
+				<input type="email" name="mail" placeholder="Correo Electrónico..." />
+				<textarea name="mensaje" placeholder="Mensaje"></textarea>
+				<div style="display:block;width:60%;margin:0 auto">
+					<input type="submit" name="send" value="Enviar">
+					<div id="status"></div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
